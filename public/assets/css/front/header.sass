@@ -1,0 +1,150 @@
+$bgcolor: lightblue
+$textcolor: #000
+$fontfamily: "Tinos", serif
+$rctbtn-bg: #000
+$rctbtn-color: #fff
+$rctbtn-border: #000
+$rctbtn-hvbg: #fff
+$rctbtn-hvcolor: #000
+$rctbtn-hvborder: #000
+$pcolor: #453d3d
+
+p
+    color: $pcolor
+
+section
+    padding: 58px 10px
+
+.btn-custom
+    background: #000!important
+    color: #fff!important
+    font-size: 18px!important
+    border: 1px solid #000!important
+    border-radius: 100px!important
+    padding: 6px 5px!important
+    padding-left: 20px!important
+    display: block!important
+    i
+        border: 2px solid #fff!important
+        border-radius: 100px!important
+        padding: 12px!important
+        width: 43px!important
+        height: 43px!important
+        margin-left: 5px!important
+        background: #fff!important
+        color: #000!important
+
+a,p,h1,h2,h3,h4,h5,h6,div,span,ul,li,body
+    font-family: $fontfamily
+    color: #fff!important
+
+a
+    text-decoration: none!important
+    font-size: 16px
+    &:hover
+        text-decoration: none!important
+
+ul
+    margin: 0px
+    padding: 0px
+
+body
+    background: #121212!important
+
+header
+    padding: 10px 0px
+    background: #121212
+    hr
+        border-color: #d4d4d4
+    .mobile-menu
+        display: none
+    nav
+        ul
+            margin: 0px
+            padding: 0px
+            li
+                margin-left: 25px
+                display: inline
+                position: relative
+                a
+                    color: #fff
+                    font-size: 20px
+                    padding-bottom: 20px
+                ul
+                    display: none
+                &:hover ul
+                    display: block
+                    position: absolute
+                    background: #000
+                    left: -20px
+                    z-index: 88
+                    width: max-content
+                    padding: 20px
+
+                    li
+                        display: block
+                        margin-left: 0px
+                    li:not(:last-child)
+                        margin-bottom: 15px
+                        &:hover
+                            text-decoration: none!important
+                        a
+                            &:hover
+                                list-style: none
+                                text-decoration: none
+
+.ds-hr
+    display: block
+.mb-hr
+    display: none
+@media only screen and (max-width:768px)
+    section
+        padding: 30px 10px!important
+    header
+        nav
+            ul
+                li
+                    margin-left: 25px
+                    display: block
+                    position: relative
+                    margin: 0px!important
+                    text-align: left
+                    margin-bottom: 18px!important
+                    padding-left: 10px
+                    a
+                        font-size: 24px
+                    &:hover
+                        .subAllMenu
+                            padding-bottom: 0px !important
+                            display: block
+                            position: relative
+                            background: transparent
+                            li:nth-child(2)
+                                padding-bottom: 0px!important
+                                margin-bottom: 0px!important
+
+        .mobile-menu
+            display: block
+        .logo-row
+            .col-12
+                margin-top: 6px
+                display: flex
+                justify-content: space-between
+                align-items: center
+
+    .ds-hr
+        display: none
+    .mb-hr
+        display: block
+
+    .navAllMenus
+        display: none
+        position: fixed
+        z-index: 999
+        width: 100%
+        background: rgb(18, 18, 18)
+        height: 100vh
+    .fixedHeader
+        position: fixed
+        width: 100%
+        z-index: 43999

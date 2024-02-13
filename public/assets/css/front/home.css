@@ -1,0 +1,50 @@
+.hero-blog {
+  position: relative;
+}
+.hero-blog figcaption {
+  position: absolute;
+  bottom: 0px;
+  position: absolute;
+  bottom: 24px;
+  background: rgba(0, 0, 0, 0.9019607843);
+  width: 100%;
+  left: 0px;
+  border-radius: 5px;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+.hero-blog .title, .hero-blog .caption {
+  font-size: 18px;
+}
+
+.first-hero-blog img {
+  height: 375px;
+  width: 100% !important;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.prev-arrow {
+  position: absolute !important;
+  top: 30% !important;
+  z-index: 999 !important;
+}
+
+.next-arrow {
+  position: absolute !important;
+  right: 0px !important;
+  top: 30% !important;
+  z-index: 999 !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .first-hero-blog img {
+    height: 375px;
+    width: 100% !important;
+    -o-object-fit: cover;
+    object-fit: cover;
+    height: auto;
+  }
+}/*# sourceMappingURL=home.css.map */
