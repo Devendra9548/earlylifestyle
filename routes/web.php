@@ -15,10 +15,6 @@ use App\Http\Controllers\backendController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/', [frontendController::class, 'home'])->name('front.home');
 Route::get('/home', [frontendController::class, 'home'])->name('front.home');
 Route::get('/about', [frontendController::class, 'about'])->name('front.about');
@@ -34,7 +30,6 @@ Route::get('/jobs', [frontendController::class, 'about'])->name('front.jobs');
 Route::get('/blog/{slug}', [frontendController::class, 'singleblog'])->name('front.singleblog');
 Route::get('/categories', [frontendController::class, 'blogcategories'])->name('front.categories');
 Route::get('/categories/{slug}', [frontendController::class, 'singlecategories'])->name('front.singlecategories');
-
 
 Route::prefix('/admin')->group(function(){
   Route::get('/',[backendController::class, 'login']);
@@ -70,8 +65,10 @@ Route::prefix('/admin')->group(function(){
   Route::get('/edit-page/{id}',[backendController::class, 'geteditpage']); 
   Route::post('/update-page',[backendController::class, 'updatepageseo']); 
   Route::get('/delete-page/{id}',[backendController::class, 'deletepageseo']); 
-
-  
-
 });
 
+Route::get('/{slug}',[frontendController::class, 'redirectpage'])->name('front.redirectpage');
+
+Route::fallback(function () {
+  return view('404');
+});

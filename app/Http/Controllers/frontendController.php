@@ -142,5 +142,17 @@ class frontendController extends Controller
        $allblogs = Blog::all();
         return view('single-category',['seo'=>$seo,'blog'=>$blog,'gseo'=>$gseo,'cblog'=>$cblog,'allblogs'=>$allblogs]);
     }
+
+    function redirectpage($slug){
+        $allblogs = Blog::all();
+        foreach($allblogs as $allblogs)
+        {
+            if($slug === $allblogs['slug']){
+                return redirect('blog/'.$slug);
+             }
+         }
+        return view("404");
+        
+    }
   
 }
