@@ -60,6 +60,36 @@ class frontendController extends Controller
         $gseo = GlobalSeo::find(1);
         return view('contact', ['pageseo'=>$pageseo,'gseo'=>$gseo,'homepageseo'=>$homepageseo]);
     }
+    function about(){
+        $pageseo = PageSeo::where('slug', 'about')->get();
+        $homepageseo = PageSeo::where('slug', 'about')->get();
+        $gseo = GlobalSeo::find(1);
+        return view('about', ['pageseo'=>$pageseo,'gseo'=>$gseo,'homepageseo'=>$homepageseo]);
+    }
+    function cancellation(){
+        $pageseo = PageSeo::where('slug', 'cancellation-refund-policy')->get();
+        $homepageseo = PageSeo::where('slug', 'cancellation-refund-policy')->get();
+        $gseo = GlobalSeo::find(1);
+        return view('cancellation-refund-policy', ['pageseo'=>$pageseo,'gseo'=>$gseo,'homepageseo'=>$homepageseo]);
+    }
+    function termsofservice(){
+        $pageseo = PageSeo::where('slug', 'terms-of-service')->get();
+        $homepageseo = PageSeo::where('slug', 'terms-of-service')->get();
+        $gseo = GlobalSeo::find(1);
+        return view('terms-of-service', ['pageseo'=>$pageseo,'gseo'=>$gseo,'homepageseo'=>$homepageseo]);
+    }
+    function privacypolicy(){
+        $pageseo = PageSeo::where('slug', 'privacy-policy')->get();
+        $homepageseo = PageSeo::where('slug', 'privacy-policy')->get();
+        $gseo = GlobalSeo::find(1);
+        return view('privacy-policy', ['pageseo'=>$pageseo,'gseo'=>$gseo,'homepageseo'=>$homepageseo]);
+    }
+    function disclaimer(){
+        $pageseo = PageSeo::where('slug', 'disclaimer')->get();
+        $homepageseo = PageSeo::where('slug', 'disclaimer')->get();
+        $gseo = GlobalSeo::find(1);
+        return view('disclaimer', ['pageseo'=>$pageseo,'gseo'=>$gseo,'homepageseo'=>$homepageseo]);
+    }
     function blogcategories(){
         $pageseo = PageSeo::where('pagename', 'Categories')->get();
         $homepageseo = PageSeo::where('pagename', 'Categories')->get();

@@ -1,7 +1,7 @@
 @extends('templates.front.singleblog')
 
 @section('body')
-<div class="container-fluid bg-dark" style="margin-top: -26px">
+<div class="container-fluid bg-dark breadcrumbs">
     <div class="container">
     <div class="row">
         <div class="col-12">

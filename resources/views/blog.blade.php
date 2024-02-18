@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="/assets/css/front/blog.css">
 @endsection
 @section('body')
-<div class="container-fluid bg-dark" style="margin-top: -26px">
+<div class="container-fluid bg-dark breadcrumbs">
     <div class="container">
     <div class="row">
         <div class="col-12">
@@ -16,7 +16,7 @@
     <div class="container">
         <div class="row">
             @foreach($blogs as $blog)
-            <div class="col-3">
+            <div class="col-12 col-md-3">
                 <div class="blog-single"><a href="/blog/{{ $blog->slug }}">
                         <img src="/blogs-thumb/{{ $blog->file }}" alt="{{ $blog->file }}" width="100%"
                             class="img-thumbnail">

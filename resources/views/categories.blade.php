@@ -1,6 +1,6 @@
 @extends('templates.front.main')
 @section('body')
-<div class="container-fluid bg-dark" style="margin-top: -26px">
+<div class="container-fluid bg-dark breadcrumbs">
     <div class="container">
     <div class="row">
         <div class="col-12">
@@ -13,7 +13,7 @@
     <div class="container">
         <div class="row">
             @foreach($blogs as $blog)
-            <div class="col-3">
+            <div class="col-12 col-md-3">
                 <div class="blog-single"><a href="/categories/{{ strtolower($blog->bcslug) }}">
                         <img src="/blogs/{{ $blog->bcfile }}" alt="{{ $blog->bcfile }}" width="100%"
                             class="img-thumbnail">

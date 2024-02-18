@@ -47,4 +47,7 @@
     object-fit: cover;
     height: auto;
   }
+  .blogssec h2 {
+    font-size: 26px !important;
+  }
 }/*# sourceMappingURL=home.css.map */

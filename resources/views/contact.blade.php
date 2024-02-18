@@ -1,7 +1,7 @@
 @extends('templates.front.main')
 
 @section('body')
-<div class="container-fluid bg-dark" style="margin-top: -26px">
+<div class="container-fluid bg-dark breadcrumbs">
     <div class="container">
     <div class="row">
         <div class="col-12">
@@ -78,7 +78,7 @@
             <button type="submit" class="btn btn-light text-dark fw-bold">Send Message</button>
         </form>
     </div>
-    <div class="col-6 ps-md-5">
+    <div class="col-12 col-md-6 ps-md-5">
         <h2>Contact Info</h2>
         <hr style="width:20%">
         <ul class="contact-info mt-5" style="list-style: none;margin:0px;padding:0px">

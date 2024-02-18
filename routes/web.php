@@ -21,6 +21,11 @@ Route::get('/', function () {
 
 Route::get('/', [frontendController::class, 'home'])->name('front.home');
 Route::get('/home', [frontendController::class, 'home'])->name('front.home');
+Route::get('/about', [frontendController::class, 'about'])->name('front.about');
+Route::get('/cancellation-refund-policy', [frontendController::class, 'cancellation'])->name('front.cancellation');
+Route::get('/terms-of-service', [frontendController::class, 'termsofservice'])->name('front.terms');
+Route::get('/privacy-policy', [frontendController::class, 'privacypolicy'])->name('front.privacy');
+Route::get('/disclaimer', [frontendController::class, 'disclaimer'])->name('front.disclaimer');
 Route::get('/search', [frontendController::class, 'search'])->name('front.search');
 Route::get('/blog', [frontendController::class, 'blog'])->name('front.blog');
 Route::get('/contact-us', [frontendController::class, 'contact'])->name('front.contact');

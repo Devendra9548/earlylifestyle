@@ -45,4 +45,10 @@ footer .btn-custom {
   padding-left: 20px !important;
   display: inline-block !important;
   margin-bottom: 60px !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .second-footer h2 {
+    margin-top: 15px !important;
+  }
 }/*# sourceMappingURL=footer.css.map */

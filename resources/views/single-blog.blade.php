@@ -5,7 +5,7 @@
 @section('body')
 <div class="container single-blog">
     <div class="row">
-        <div class="col-8 ps-4 pe-3 main-blog">
+        <div class="col-12 col-md-8 ps-4 pe-3 main-blog">
             <div class="feature-image">
                 <img src="/blogs/{{ $blog->file }}" width="100%" alt="{{ $blog->file }}" class="img-thumbnail">
             </div>
@@ -16,7 +16,7 @@
             {!! $blog->description !!}
 
         </div>
-        <div class="col-4 ps-5 pe-5">
+        <div class="col-12 col-md-4 ps-3 pe-3 ps-md-5 pe-md-5 sidebar">
             <form action="/search" method="GET" style="position:relative">
                 <input type="text" class="form-control fs-5 fw-bold" placeholder="Search Blogs" name="s">
                 <button type="submit" class="bg bg-primary"
