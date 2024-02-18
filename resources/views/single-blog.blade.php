@@ -5,7 +5,7 @@
 @section('body')
 <div class="container single-blog">
     <div class="row">
-        <div class="col-8 ps-4 pe-3 main-blog testingchange">
+        <div class="col-8 ps-4 pe-3 main-blog">
             <div class="feature-image">
                 <img src="/blogs/{{ $blog->file }}" width="100%" alt="{{ $blog->file }}" class="img-thumbnail">
             </div>
