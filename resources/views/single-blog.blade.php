@@ -1,6 +1,7 @@
 @extends('templates.front.singleblog')
 @section('customcss')
 <link rel="stylesheet" href="/assets/css/front/single-blog.css">
+<link rel="stylesheet" href="/assets/css/front/single-blog.css">
 @endsection
 @section('body')
 <div class="container single-blog">
