@@ -1,12 +1,11 @@
 @extends('templates.front.singleblog')
 @section('customcss')
 <link rel="stylesheet" href="/assets/css/front/single-blog.css">
-<link rel="stylesheet" href="/assets/css/front/single-blog.css">
 @endsection
 @section('body')
 <div class="container single-blog">
     <div class="row">
-        <div class="col-8 ps-4 pe-3">
+        <div class="col-8 ps-4 pe-3 main-blog">
             <div class="feature-image">
                 <img src="/blogs/{{ $blog->file }}" width="100%" alt="{{ $blog->file }}" class="img-thumbnail">
             </div>
@@ -25,7 +24,7 @@
                         class="fa-brands fa-searchengin"
                         style="padding: 0px 8px;font-size: 26px;color: #fff;position: relative;top: 2px;"></i></button>
             </form><br>
-            <a href="" target="_blank" class=""><img src="/assets/imgs/google-news.webp" alt="google-news" width="100%"></a><br>
+            <a href="https://news.google.com/publications/CAAqBwgKMML8pAww1PSzBA?hl=en-IN&gl=IN&ceid=IN%3Aen" target="_blank" class=""><img src="/assets/imgs/google-news.webp" alt="google-news" width="100%"></a><br>
             <h2 class="mt-3 mb-3">Related Posts</h2>
             @foreach($cblog as $allblogs)
             @if($allblogs->title == $blog->title)
@@ -33,7 +32,7 @@
             @endif
             <a href="/blog/{{ $allblogs->slug }}">
                 <div class="related-posts d-flex align-items-center mb-3">
-                    <img src="/recent-blogs-thumb/{{ $blog->file }}" alt="{{ $blog->file }}">
+                    <img src="/recent-blogs-thumb/{{ $allblogs->file }}" alt="{{ $allblogs->file }}">
                     <p style="margin-left:10px">
                         {{ Illuminate\Support\Str::limit($allblogs->title, $limit = 57, $end = '...') }}</p>
                 </div>
