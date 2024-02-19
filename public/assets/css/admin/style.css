@@ -62,4 +62,9 @@ header {
   font-size: 18px;
   margin: 0px;
   text-transform: capitalize;
+}
+
+.richtexteditor, textarea {
+  height: 300px !important;
+  overflow: scroll !important;
 }/*# sourceMappingURL=style.css.map */
