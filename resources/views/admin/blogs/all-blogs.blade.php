@@ -16,13 +16,13 @@ All Blogs
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable modal-xl">
+        <div class="modal-dialog modal-dialog-scrollable modal-fullscreen">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Blog Actions</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" style="background: #e5e5e5;">
                     <div id="result"></div>
                     <div id="layoutdiv" style="position: absolute; width: 100%;z-index: 999;left: 0px;height:100%;">
                     </div>
@@ -40,10 +40,13 @@ All Blogs
     <div class="container mt-5">
         <div class="row bg-white mx-1">
             <div class="col-6 d-flex justify-content-start align-items-center">
-                <p class="m-0 py-3">All Blogs</p>
+                <p class="m-0 py-3 fs-5 fw-bold"> All Blogs</p>
             </div>
-            <div class="col-6 d-flex justify-content-end align-items-center">
-                <a href="#">Filters</a>
+            <div class="col-6 d-flex justify-content-center align-items-center">
+                <form action="" style="position:relative" class="w-100">
+                    <input type="text" placeholder="Search Any Blog...With Title & Category" name="search" class="form-control w-100" value="{{$search}}">
+                    <input type="submit" value="Search" style="position:absolute;right:0px;top:0px" class="btn btn-primary">
+                </form>
             </div>
         </div><br>
         <div class="row bg-white mx-1">
@@ -53,9 +56,9 @@ All Blogs
                         <tr>
                             <th>Id</th>
                             <th>Title</th>
-                            <th>Slug</th>
-                            <th>Category</th>
-                            <th>Actions</th>
+                            <th>Image</th>
+                            <th style="width: 13%;">Category</th>
+                            <th style="width: 32%;">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -63,7 +66,7 @@ All Blogs
                         <tr>
                             <td> {{ $blog->id }}</td>
                             <td> {{ $blog->title }}</td>
-                            <td> {{ $blog->slug }}</td>
+                            <td> <img src="/recent-blogs-thumb/{{ $blog->file }}" alt="{{ $blog->file }}" width="100%"></td>
                             <td> {{ $blog->bcname }}</td>
                             <td class="">
                                 <a href="#" class="btn btn-secondary text-white seotag m-1" value="{{ $blog->id }}"

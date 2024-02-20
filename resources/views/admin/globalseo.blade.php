@@ -69,8 +69,9 @@ Global SEO
                         <textarea class="form-control" rows="5" id="gfas" name="gfas"
                             placeholder="like: <script> alert('hello world') </script>">{{ $gseo->gfas }}</textarea>
                     </div>
-
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <div class="fixedbtn">
+                        <button type="submit" class="btn btn-primary">Save Changes !</button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -78,29 +79,29 @@ Global SEO
 </div>
 
 <script>
-    $(document).ready(function() {
-        $("#globalseo").submit(function(event) {
-            event.preventDefault();
-            var formData = new FormData(this);
-            var hiddenid = document.querySelector("#hiddenid").value;
-            $.ajax({
-                type: "POST",
-                url: "/admin/global-seo",
-                data: formData,
-                contentType: false,
-                processData: false,
-                success: function(res) {
-                    if (res == true) {
-                        $("#globalseo")[0].reset();
-                        alert("Global SEO updated successfully!");
-                        window.location.reload('/admin/global-seo');
-                    } else {
-                        alert("Error!"+res);
-                    }
+$(document).ready(function() {
+    $("#globalseo").submit(function(event) {
+        event.preventDefault();
+        var formData = new FormData(this);
+        var hiddenid = document.querySelector("#hiddenid").value;
+        $.ajax({
+            type: "POST",
+            url: "/admin/global-seo",
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function(res) {
+                if (res == true) {
+                    $("#globalseo")[0].reset();
+                    alert("Global SEO updated successfully!");
+                    window.location.reload('/admin/global-seo');
+                } else {
+                    alert("Error!" + res);
                 }
-            });
+            }
         });
     });
-    </script>
+});
+</script>
 </body>
 @endsection

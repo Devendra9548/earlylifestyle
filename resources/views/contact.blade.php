@@ -18,10 +18,10 @@
         </div>
         <div class="col-12 col-md-4 mb-3">
             <div class="card text-center text-dark py-3">
-                <a href="mailto:hello@earlylifestyle.com">
+                <a href="mailto:{{$gseo->whatsapp}}">
                     <div class="card-body px-3">
                         <i class="fa-regular fa-envelope display-1 mb-3" style="color:#000!important"></i>
-                        <h2 class="card-title mb-3 fs-3" style="color:#000!important">hello@earlylifestyle.com</h2>
+                        <h2 class="card-title mb-3 fs-3" style="color:#000!important">{{$gseo->whatsapp}}</h2>
                         <p class="card-text fs-5" style="color:#000!important">Having Trouble With Any Blog? We Welcome
                             Your Inputs.</p>
                 </a>
@@ -30,10 +30,10 @@
     </div>
     <div class="col-12 col-md-4 mb-3">
         <div class="card text-center text-dark py-3">
-            <a href="mailto:hello@earlylifestyle.com">
+            <a href="mailto:{{$gseo->whatsapp}}">
                 <div class="card-body px-3">
                     <i class="fa-regular fa-envelope display-1 mb-3" style="color:#000!important"></i>
-                    <h2 class="card-title mb-3 fs-3" style="color:#000!important">hello@earlylifestyle.com</h2>
+                    <h2 class="card-title mb-3 fs-3" style="color:#000!important">{{$gseo->whatsapp}}</h2>
                     <p class="card-text fs-5" style="color:#000!important">Have A Question For Our Team ? We Welcome
                         Your Inputs.</p>
             </a>
@@ -42,10 +42,10 @@
 </div>
 <div class="col-12 col-md-4 mb-3">
     <div class="card text-center text-dark py-3">
-        <a href="mailto:hello@earlylifestyle.com">
+        <a href="mailto:{{$gseo->whatsapp}}">
             <div class="card-body px-3">
                 <i class="fa-regular fa-envelope display-1 mb-3" style="color:#000!important"></i>
-                <h2 class="card-title mb-3 fs-3" style="color:#000!important">hello@earlylifestyle.com</h2>
+                <h2 class="card-title mb-3 fs-3" style="color:#000!important">{{$gseo->whatsapp}}</h2>
                 <p class="card-text fs-5" style="color:#000!important">Have A Question For Our Organization ? We Welcome
                     Your Inputs.</p>
         </a>
@@ -83,27 +83,27 @@
         <hr style="width:20%">
         <ul class="contact-info mt-5" style="list-style: none;margin:0px;padding:0px">
             <li class="mb-3">
-                <a target="_blank" class="fs-4" href="https://www.facebook.com/earlylifestyle.fb" rel="noopener"><i
+                <a target="_blank" class="fs-4" href="{{$gseo->facebook}}" rel="noopener"><i
                         class="fa-brands fa-square-facebook fs-3" style="width:40px"></i> Facebook</a>
             </li>
             <li class="mb-3">
-                <a target="_blank" class="fs-4" href="https://www.instagram.com/earlylifestyle/" rel="noopener"><i
+                <a target="_blank" class="fs-4" href="{{$gseo->instagram}}" rel="noopener"><i
                         class="fa-brands fa-square-instagram fs-3" style="width:40px"></i> Instagram</a>
             </li>
             <li class="mb-3">
-                <a target="_blank" class="fs-4" href="https://linkedin.com/company/earlylifestyle" rel="noopener"><i
+                <a target="_blank" class="fs-4" href="{{$gseo->linkedin}}" rel="noopener"><i
                         class="fa-brands fa-linkedin fs-3" style="width:40px"></i> Linkedin</a>
             </li>
             <li class="mb-3">
-                <a target="_blank" class="fs-4" href="https://x.com/early_lifestyle?t=m5-_ZZOpKrRXj9LdYqiUww&amp;s=09"
+                <a target="_blank" class="fs-4" href="{{$gseo->twitter}}"
                     rel="noopener"><i class="fa-brands fa-square-x-twitter fs-3" style="width:40px"></i> Twitter</a>
             </li>
             <li class="mb-3">
-                <a href="mailto:hello@earlylifestyle.com" class="fs-4"><i class="fa-solid fa-envelope fs-4" style="width:40px"></i>
-                    hello@earlylifestyle.com</a>
+                <a href="mailto:{{$gseo->whatsapp}}" class="fs-4"><i class="fa-solid fa-envelope fs-4" style="width:40px"></i>
+                    {{$gseo->whatsapp}}</a>
             </li>
             <li class="mb-3">
-                <a target="_blank" class="fs-4" href="https://www.youtube.com/@early.lifestyle" rel="noopener"><i
+                <a target="_blank" class="fs-4" href="{{$gseo->youtube}}" rel="noopener"><i
                         class="fa-brands fa-youtube fs-4" style="width:40px"></i> Youtube</a>
             </li>
         </ul>

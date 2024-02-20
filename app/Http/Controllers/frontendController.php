@@ -6,6 +6,7 @@ use App\Models\Blog;
 use App\Models\BlogCategory;
 use App\Models\BlogSeo;
 use App\Models\GlobalSeo;
+use App\Models\category_blog_seo;
 use App\Models\PageSeo;
 use Illuminate\Support\Facades\DB;
 use Mail;
@@ -128,12 +129,12 @@ class frontendController extends Controller
     }
 
     function singlecategories($slug){
-        $seo = BlogSeo::where('canonical', $slug)->get();
+        $seo = category_blog_seo::where('canonical', $slug)->get();
         $blog = BlogCategory::where('bcname', $slug)->first();
         $gseo = GlobalSeo::find(1);
 
         $cblog = DB::table('blogs as b')
-        ->select('b.id', 'b.title', 'bc.bcname', 'b.description', 'b.file', 'b.slug', 'bc.bcslug')
+        ->select('b.id', 'b.title', 'bc.bcname', 'bc.created_at', 'bc.updated_at', 'b.description', 'b.file', 'b.slug', 'bc.bcslug')
         ->join('blogs_categories as bc', 'b.category', '=', 'bc.id')
         ->where('bc.bcslug', $slug)
         ->get();

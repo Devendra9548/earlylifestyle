@@ -51,7 +51,10 @@ Route::prefix('/admin')->group(function(){
   Route::delete('/delete-blog-categories/{id}',[backendController::class, 'DeleteBlogCategory']);
 
   Route::get('/post-seo/{id}',[backendController::class, 'postseo'])->name('postseo');
-  Route::post('/post-seo',[backendController::class, 'wpaddpostseo']); 
+  Route::post('/post-seo',[backendController::class, 'wpaddpostseo']);
+  
+  Route::get('/post-cat-seo/{id}',[backendController::class, 'postcatseo'])->name('postcatseo');
+  Route::post('/post-cat-seo',[backendController::class, 'wpaddpostcatseo']); 
 
   Route::get('/global-seo',[backendController::class, 'globalseo'])->name('global-seo'); 
   Route::post('/global-seo',[backendController::class, 'wpglobalseo'])->name('wp-global-seo'); 

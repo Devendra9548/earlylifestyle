@@ -8,6 +8,25 @@ header {
   width: 16%;
   height: 100vh;
   float: left;
+  z-index: 30;
+}
+
+.fixedbtn {
+  background: #fff;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  left: 0px;
+  text-align: center;
+  padding: 9px;
+  z-index: 9;
+  border-top: 2px solid rgba(0, 0, 0, 0.5333333333);
+}
+
+.fixedbtn-2 {
+  position: fixed;
+  bottom: 16px;
+  z-index: 999;
 }
 
 .left-menus ul {
@@ -64,7 +83,11 @@ header {
   text-transform: capitalize;
 }
 
-.richtexteditor, textarea {
-  height: 300px !important;
+.edit-blogs .richtexteditor, .edit-blogs textarea {
+  height: 500px !important;
   overflow: scroll !important;
+}
+
+.edit-blogs {
+  padding: 0px 50px !important;
 }/*# sourceMappingURL=style.css.map */

@@ -50,6 +50,7 @@
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" type="text/css" href="/assets/css/slick.css" />
+{!! $gseo->globalheader !!}
 <script src="/assets/js/jquery.min.js"></script>
 <script src="/assets/js/bootstrap.bundle.min.js"></script>
 </head>
@@ -57,13 +58,22 @@
 <body>
     <x-header />
     @yield('body')
-    <x-footer />
+    <x-footer 
+    facebook="{{ isset($gseo->facebook) ? $gseo->facebook : '' }}"
+    linkedin="{{ isset($gseo->linkedin) ? $gseo->linkedin : '' }}"
+    instagram="{{ isset($gseo->instagram) ? $gseo->instagram : '' }}"
+    twitter="{{ isset($gseo->twitter) ? $gseo->twitter : '' }}"
+    youtube="{{ isset($gseo->youtube) ? $gseo->youtube : '' }}"
+    mail="{{ isset($gseo->whatsapp) ? $gseo->whatsapp : '' }}"
+/>
+    {!! $gseo->gfbs !!}
 
 
     <script type="text/javascript" src="/assets/js/slick.min.js"></script>
     <script type="text/javascript" src="/assets/js/front/footer.js"></script>
     
     @yield('customjs')
+    {!! $gseo->gfas !!}
 
 </body>
 

@@ -12,12 +12,12 @@
 <meta name="description" content="{{ $seo[0]->description }}">
 <meta name="keywords" content="{{ $seo[0]->keywords }}">
 <meta name="author" content="{{ $seo[0]->author }}">
-<link rel="canonical" href="{{ url('/') }}/blog/{{$seo[0]->canonical}}" />
+<link rel="canonical" href="{{ url('/') }}/categories/{{$seo[0]->canonical}}" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="{{ $seo[0]->title }}" />
 <meta property="og:description" content="{{ $seo[0]->description }}" />
-<meta property="og:url" content="{{ url('/') }}/blog/{{$seo[0]->canonical}}" />
+<meta property="og:url" content="{{ url('/') }}/categories/{{$seo[0]->canonical}}" />
 <meta property="og:site_name" content="{{ $gseo->sitename }}" />
 <meta property="article:publisher" content="{{ $gseo->facebook }}" />
 <meta property="article:published_time" content="{{ $blog->created_at }}" />

@@ -40,11 +40,8 @@ All Categories
     <!-- second section -->
     <div class="container  mt-5">
         <div class="row bg-white mx-1">
-            <div class="col-6 d-flex justify-content-start align-items-center">
+            <div class="col-12 d-flex justify-content-start align-items-center">
                 <p class="m-0 py-3">All Blog Categories</p>
-            </div>
-            <div class="col-6 d-flex justify-content-end align-items-center">
-                <a href="#">Filters</a>
             </div>
         </div><br>
         <div class="row bg-white mx-1 mb-5">
@@ -54,9 +51,9 @@ All Categories
                         <tr>
                             <th style="width:10%">Id</th>
                             <th style="width:20%">Title</th>
-                            <th style="width:25%">Slug</th>
-                            <th style="width:20%">Category</th>
-                            <th style="width:25%">Actions</th>
+                            <th style="width:22%">Slug</th>
+                            <th style="width:18%">Category</th>
+                            <th style="width:32%">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -76,6 +73,10 @@ All Categories
                                 @endforeach
                             </td>
                             <td class="">
+                            <a href="#" class="btn btn-secondary text-white seotag m-1" value="{{ $blogcategories['id'] }}"
+                                    data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+                                        class="fa-brands fa-searchengin"></i>
+                                    SEO</a>
                                 <a id="views" href="#" class="btn btn-success text-white reads views"
                                     value="{{ $blogcategories['id'] }}" data-bs-toggle="modal"
                                     data-bs-target="#exampleModal"><i class="fa-solid fa-eye"></i> View</a>
@@ -199,6 +200,22 @@ $(document).ready(function() {
     });
 });
 </script>
+<script>
+$(document).ready(function() {
+    $(".seotag").click(function(event) {
+        event.preventDefault();
+        $('#layoutdiv').hide();
+        var datas = $(this).attr('value');
+        $.ajax({
+            type: "GET",
+            url: "/admin/post-cat-seo/" + datas,
+            success: function(data) {
+                $("#getformdata").html(data);
 
+            }
+        });
+    });
+});
+</script>
 </body>
 @endsection

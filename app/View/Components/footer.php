@@ -11,9 +11,20 @@ class footer extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public $facebook='';
+    public $linkedin='';
+    public $instagram='';
+    public $twitter='';
+    public $youtube='';
+    public $mail='';
+    public function __construct($facebook,$linkedin,$instagram,$twitter,$youtube,$mail)
     {
-        //
+       $this->facebook=$facebook;
+       $this->linkedin=$linkedin;
+       $this->instagram=$instagram;
+       $this->twitter=$twitter;
+       $this->youtube=$youtube;
+       $this->mail=$mail;
     }
 
     /**

@@ -38,12 +38,12 @@
                     </form>
                 </div>
                 <div class="social-icons mt-4">
-                    <a href="https://linkedin.com/company/earlylifestyle" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://www.facebook.com/earlylifestyle.fb" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="https://www.instagram.com/earlylifestyle/" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
-                    <a href="https://x.com/early_lifestyle?t=m5-_ZZOpKrRXj9LdYqiUww&s=09" target="_blank"><i class="fa-brands fa-square-x-twitter"></i></a>
-                    <a href="mailto:hello@earlylifestyle.com"><i class="fa-solid fa-envelope"></i></a>
-                    <a href="https://www.youtube.com/@early.lifestyle" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="{{ $linkedin }}" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="{{ $facebook }}" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="{{ $instagram }}" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
+                    <a href="{{ $twitter }}" target="_blank"><i class="fa-brands fa-square-x-twitter"></i></a>
+                    <a href="mailto:{{ $mail }}"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="{{ $youtube }}" target="_blank"><i class="fa-brands fa-youtube"></i></a>
                 </div>
             </div>
         </div>

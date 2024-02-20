@@ -1,4 +1,4 @@
-@extends('templates.front.singleblog')
+@extends('templates.front.singlecatblog')
 
 @section('body')
 <div class="container-fluid bg-dark breadcrumbs">

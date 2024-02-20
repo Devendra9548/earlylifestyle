@@ -9,6 +9,7 @@ use App\Models\AdminInfo;
 use App\Models\Blog;
 use App\Models\BlogCategory;
 use App\Models\BlogSeo;
+use App\Models\category_blog_seo;
 use App\Models\GlobalSeo;
 use App\Models\PageSeo;
 use Intervention\Image\Facades\Image;
@@ -72,17 +73,28 @@ class backendController extends Controller
           }
     }
 
-    function allblogs(){
+    function allblogs(Request $req){
+      $search = $req['search'] ?? "";
       if(Cookie::has('pswd')){
+        if($search != ''){
+          $dbs = DB::table('blogs as b')
+          ->select('b.id', 'b.title', 'bc.bcname', 'b.description', 'b.file', 'b.slug')
+          ->join('blogs_categories as bc', 'b.category', '=', 'bc.id')
+          ->where('b.title', 'LIKE', '%' . $search . '%')
+          ->orWhere('bc.bcname', 'LIKE', '%' . $search . '%')
+          ->get();
+        }
+        else{
         $dbs = DB::table('blogs as b')
         ->select('b.id', 'b.title', 'bc.bcname', 'b.description', 'b.file', 'b.slug')
         ->join('blogs_categories as bc', 'b.category', '=', 'bc.id')
         ->get();
+        }
         $members = DB::table('blogs as b')
         ->select('b.id', 'b.title', 'bc.bcname', 'b.description', 'b.file', 'b.slug')
         ->join('blogs_categories as bc', 'b.category', '=', 'bc.id')
         ->get();
-        return view('admin.blogs.all-blogs',['blog'=>$dbs,'members'=>$members]);
+        return view('admin.blogs.all-blogs',['blog'=>$dbs,'members'=>$members,'search'=>$search]);
       }else{
         return redirect('admin'); 
       }
@@ -318,9 +330,12 @@ class backendController extends Controller
           $dbs->bcdescription = $req->input('bcdescription');
           $dbs->bcfile = $origname;
           $dbs->bccategory = $req->input('bccategory');
-          $dbs->bcslug = $req->input('bcslug');
+          $slug = $req->input('bcslug');
+          $dbs->bcslug = $slug;
           $result = $dbs->save();
           if($result){
+            $blogseo = category_blog_seo::create(['canonical'=>$slug,'file'=>$origname,'blogid'=>$dbs->id]);
+            $blogseo->id;
             return True;
           }
           else{
@@ -348,6 +363,9 @@ class backendController extends Controller
       // Handle product not found error
       return redirect()->back()->with('error', 'Blog not found.');
     }
+
+    $slug = $req->bcslug;
+    $dbs->bcslug = $slug;
   
       // Check if a new image is uploaded for updating
     if ($req->hasFile('bcfile')) {
@@ -359,11 +377,18 @@ class backendController extends Controller
       $customFolderPath = public_path('blogs');
       $image->move($customFolderPath, $origname);
       $dbs->bcfile = $origname;
+      
+      $blogseo = category_blog_seo::find($dbs->id);
+      $blogseo->update(['file'=>$origname]);
+      $blogseo->id;
     }
        
-    
+    $blogseo = category_blog_seo::find($dbs->id);
+    $blogseo->update(['canonical'=>$slug]);
+    $blogseo->id;
+
     $dbs->bcname = $req->bcname;
-    $dbs->bcslug = $req->bcslug;
+    
     $dbs->bcdescription = $req->bcdescription;
     $dbs->bccategory = $req->bccategory;
     $result = $dbs->save();
@@ -381,6 +406,12 @@ class backendController extends Controller
 
   function DeleteBlogCategory($id){
     if(Cookie::has('pswd')){
+    
+    $dbseo = category_blog_seo::find($id);
+      if($dbseo){
+        $dbseo->delete();
+     }
+
     $dbs = BlogCategory::find($id);
     if($dbs){
     $dbs->delete();
@@ -408,6 +439,42 @@ class backendController extends Controller
     if (!$dbs) {
       // Handle product not found error
       return redirect()->back()->with('error', 'Blog not found.');
+    }
+    
+    $dbs->title = $req->title;
+    $dbs->description = $req->description;
+    $dbs->keywords = $req->keywords;
+    $dbs->author = $req->author;
+    $dbs->smarkup = $req->smarkup;
+    $result = $dbs->save();
+    if($result){
+    return true;
+    }
+    else{
+      return false;
+    } 
+  }
+  else{
+    return redirect('admin');
+  }
+  }
+
+  function postcatseo($id){
+    if(Cookie::has('pswd')){
+    $dbs = category_blog_seo::find($id);
+    return view('admin.cat-seo',['blogid'=>$id,'members'=>$dbs]);
+  }
+  else{
+    return redirect('admin');
+  }
+  }
+
+  function wpaddpostcatseo(Request $req){
+    if(Cookie::has('pswd')){
+    $dbs = category_blog_seo::find($req->blogid);
+    if (!$dbs) {
+      // Handle product not found error
+      return redirect()->back()->with('error', 'Blog Category not found.');
     }
     
     $dbs->title = $req->title;
